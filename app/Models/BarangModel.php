@@ -40,5 +40,6 @@ class BarangModel extends Model
 
     public function searchData()
     {
+        
     }
 }
