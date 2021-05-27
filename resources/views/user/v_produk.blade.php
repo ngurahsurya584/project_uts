@@ -52,7 +52,8 @@
                     </ol>
                     <div class="carousel-inner" role="listbox">
                         <div class="carousel-item active">
-                            <img class="d-block img-fluid" src="http://placehold.it/900x350" alt="First slide">
+                            <img class="d-block img-fluid" src="{{ asset('template_shop/') }}/assets/img/Banner.jpg"
+                                alt="First slide" width="200%" height="200%">
                         </div>
                         <div class="carousel-item">
                             <img class="d-block img-fluid" src="http://placehold.it/900x350" alt="Second slide">

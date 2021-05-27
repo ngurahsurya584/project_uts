@@ -18,6 +18,8 @@ use Illuminate\Support\Facades\Route;
 // Route::get('/', function () {
 //     return view('welcome');
 // });
+
+
 Route::get('/', [DashboardController::class, 'index']);
 
 Route::post('/login', [HomeController::class, 'login']);
@@ -34,8 +36,15 @@ Route::get('/nope', [HomeController::class, 'tolak']);
 
 Route::get('/produk', [HomeController::class, 'produk']);
 
+Route::get('/member', App\Http\Livewire\Post\Index::class)->name('post.index');
+
+Route::get('/member/create', App\Http\Livewire\Post\Create::class)->name('post.create');
+
+Route::get('/member/edit/{id}', App\Http\Livewire\Post\Edit::class)->name('post.edit');
 
 Auth::routes();
+
+
 
 Route::group(['middleware' => 'admin'], function () {
 
@@ -57,6 +66,8 @@ Route::group(['middleware' => 'admin'], function () {
     Route::post('/delete/{id_barang}', [HomeController::class, 'delete']);
 
     Route::get('/search', [HomeController::class, 'search']);
+
+    
 });
 
 // Route::group(['middleware' => 'user'], function () {
